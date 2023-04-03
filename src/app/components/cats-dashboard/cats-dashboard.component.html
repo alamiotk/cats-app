@@ -1,0 +1,30 @@
+<div class="dashboard">
+  <div class="dashboard__header">Facts about cats</div>
+  <div class="dashboard__container">
+    <ng-container *ngFor="let fact of Arr(factsArrayNumber).fill(1)">
+      <ng-container *ngIf="catsFacts$ | async"> </ng-container>
+    </ng-container>
+
+    <ng-container *ngIf="factsArray.length >= cardIncNumber; else loading">
+      <ng-container *ngFor="let catFact of factsArray">
+        <div class="dashboard__card dashboard__card--multiline-ellipsis">
+          <div
+            (click)="openDialog(catFact)"
+            class="dashboard__card--multiline-ellipsis"
+          >
+            {{ catFact }}
+          </div>
+        </div>
+      </ng-container>
+    </ng-container>
+
+    <div class="dashboard__warning" *ngIf="warning">
+      Oops, looks like we don't have any more facts about cats. Stay tuned for
+      more!
+    </div>
+  </div>
+</div>
+
+<ng-template #loading>
+  <div class="loading"><div>loading...</div></div>
+</ng-template>

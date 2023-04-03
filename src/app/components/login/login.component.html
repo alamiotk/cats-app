@@ -1,0 +1,30 @@
+<div class="login-page">
+  <form
+    [formGroup]="loginForm"
+    (ngSubmit)="onSubmit()"
+    class="login-page__container"
+  >
+    <div class="login-page__header">
+      To access our Cat Page you need to log in :)
+    </div>
+    <input
+      formControlName="userName"
+      [placeholder]="userPlaceholder"
+      class="login-page__input"
+    />
+    <input
+      type="password"
+      formControlName="password"
+      [placeholder]="passPlaceholder"
+      class="login-page__input"
+    />
+
+    <div *ngIf="submitError" class="login-page__error">
+      Wrong data! Check your user name and password.
+    </div>
+
+    <button class="button" type="submit" class="login-page__button">
+      Login
+    </button>
+  </form>
+</div>

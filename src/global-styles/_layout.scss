@@ -1,0 +1,28 @@
+@import "_colors.scss";
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 10px 0;
+  background-color: $background-color;
+  font-family: "Delicious Handrawn", cursive !important;
+
+  margin: 0 auto;
+  width: 1440px;
+  min-height: 100vh;
+}
+
+.custom-modaldialog {
+  .mat-dialog-container {
+    background-color: $primary-gray;
+    border-radius: 15px;
+    border: 1px solid $black;
+    color: $black;
+    font-size: 30px;
+    line-height: 40px;
+  }
+}
