@@ -21,3 +21,5 @@ To run app please do npm install and npm run start.
 To log into the app you need these credentials:
 username: admin,
 password: 1234
+
+Username after logging in is saved in localStorage.
