@@ -19,5 +19,5 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 To run app please do npm install and npm run start.
 
 To log into the app you need these credentials:
-username: admin
+username: admin,
 password: 1234
