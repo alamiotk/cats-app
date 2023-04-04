@@ -26,6 +26,7 @@ export class CatsDashboardComponent implements OnInit {
   Arr = Array;
   factsArrayNumber: number = 12;
   cardIncNumber: number = 12;
+  totalNumberOfCards = 90;
 
   private fetchAdditionalFact: Subject<void> = new Subject<void>();
   fetchAdditionalFact$: Observable<void> =
@@ -43,7 +44,8 @@ export class CatsDashboardComponent implements OnInit {
   onScroll() {
     if (
       this.window.innerHeight + this.window.scrollY >=
-      document.body.scrollHeight - 20
+        document.body.scrollHeight - 20 &&
+      this.factsArray.length < this.totalNumberOfCards
     ) {
       this.factsArrayNumber += this.cardIncNumber;
     }
@@ -75,8 +77,8 @@ export class CatsDashboardComponent implements OnInit {
   }
 
   private checkFetchingCondition(): void {
-    this.warning = this.factsArray.length >= 90;
-    this.factsArray.length >= 90
+    this.warning = this.factsArray.length >= this.totalNumberOfCards;
+    this.factsArray.length >= this.totalNumberOfCards
       ? this.destroy.next()
       : this.fetchAdditionalFact.next();
   }
